@@ -175,7 +175,7 @@
       </div>
       <div class="form-group">
         <%= f.label :owner %>
-          <%= f.collection_select :owner_id, User.all, :id, :email, {}, class: "select2 form-control"%>
+          <%= f.collection_select :owner_id, User.all + [@network_event.user.id, 'Owner of event'], :id, :email, {:include_blank => 'No owner'}, class: "select2 form-control"%>
       </div>
       <div class="form-group">
         <%= f.label :date_modifier, "Due date" %>
